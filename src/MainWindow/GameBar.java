@@ -16,11 +16,11 @@ public class GameBar implements Observer{
 	private int length = 20;
 	//Maximo valor en X que alcanza la barra dentro de la interfaz
 	private int max_x;
-	
+	//Variable que se encarga de encoger el tamaño de la barra
 	private int smaller = 8;
-	
-	private int height = 15;
-	
+	//Ancho de la barra de juego
+	private int height;
+	//Colisión en modo de giro
 	private boolean rCollision = false;
 	
 	private boolean rBlock = false;
@@ -69,19 +69,39 @@ public class GameBar implements Observer{
 		return y_pos;
 	}
 
+	/**
+	 * El método smallBar será llamado cada vez
+	 * que el jugador deje pasar la bola por la
+	 * parte inferior de la pantalla. La dificultad
+	 * aumenta porque el tamaño de la barra es menor
+	 * @return length
+	 */
 	public int smallBar(){
 		length = length - smaller;
 		return length;
 	}
-	
+	/**
+	 * Método que retorna el valor actual de
+	 * length(largo)
+	 * @return length
+	 */
 	public int gLength(){
 		return length;
 	}
 	
+	/**
+	 * 
+	 * @return height
+	 */
 	public int getHeight() {
 		return height;
 	}
-	
+	/**
+	 * Dentro de el método "roll" se crea un hilo
+	 * para que la barra cambie sus medidas y de 
+	 * esta manera simular la rotación cada vez
+	 * que se presione sobre ella.
+	 */
 	public void roll(){
 		if(!rBlock){
 			Thread t = new Thread(){

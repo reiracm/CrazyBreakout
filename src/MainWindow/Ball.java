@@ -26,15 +26,15 @@ public class Ball extends Observable implements Runnable {
 	private int speed_x = 1;
 	//velocidad en y
 	private int speed_y = 1;
-	
+	//Variable booleana para iniciar el hilo
 	private boolean alive = false;
-	
+	//Modo profundidad de la bola
 	private int depth = 0;
-	
+	//Cantidad de bloques que ha pasado la bola en modo profundidad
 	private int pastBlocks = 0;
-	
+	//Velocidad inicial de la bola
 	private int tInitial = 0;
-	
+	//Tiempo de espera antes del cambio de velocidad
 	private int initialDelay = 20;
 	
 	/**
@@ -129,6 +129,7 @@ public class Ball extends Observable implements Runnable {
 	public boolean isAlive() {
 		return alive;
 	}
+	
 	/**
 	 * Este método no retornará nada pero cada vez que 
 	 * el jugador pierda una bola,la siguiente tomará 

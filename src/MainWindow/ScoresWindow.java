@@ -12,9 +12,11 @@ import java.awt.Font;
  *
  */
 public class ScoresWindow extends JPanel {
-
+	//Arreglo para los 10 jugadores con puntajes más altos
 	private static Player finalPlayer [] = new Player [10];
+	//Apuntador del arreglo
 	private static int pointer = 0;
+	
 	/**
 	 * Se agrega un nuevo jugador una vez que se ingrese
 	 * el nombre en la ventana principal. Este debe tener
@@ -24,6 +26,7 @@ public class ScoresWindow extends JPanel {
 	public static void addPlayer(String name){		
 		finalPlayer[pointer] = new Player(name);
 		}
+	
 	/**
 	 * Una vez que se tenga el puntaje final del
 	 * jugador actual, se va a imprimir en la
